@@ -68,7 +68,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             # Выполняет pull образа с DockerHub
-            sudo docker pull ${{ secrets.MY_SECRET_TOKEN }}/infra_actions
+            sudo docker pull umar1593/infra_actions
             #остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 ${{ secrets.MY_SECRET_TOKEN }}/infra_actions
+            sudo docker run --rm -d -p 5000:5000 umar1593/infra_actions
